@@ -1,0 +1,79 @@
+﻿@model SportsRosters.Models.BaseballRoster
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Baseball Roster</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name:</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name:</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" min="00" max="99"/>
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            </br>
+            <div class="form-group">
+                <label asp-for="Position" class="control-label">Position: </label>
+                <select name="Position" id="Position">
+                    <option value="Pitcher">Pitcher</option>
+                    <option value="Catcher">Catcher</option>
+                    <option value="Infielder">Infielder</option>
+                    <option value="Outfield">Outfielder</option>
+                    <option value="Utility">Utility</option>
+                </select>
+            </div>
+            </br>
+            <div class="form-group">
+                <label asp-for="Bats" class="control-label">Bats:  </label>
+                
+                  <input type="radio" id="Right" name="Bats" value="Right">
+                  <label for="Right">Right</label>
+                  <input type="radio" id="Left" name="Bats" value="Left">
+                  <label for="Left">Left</label>
+                  <input type="radio" id="Switch" name="Bats" value="Switch">
+                  <label for="Switch">Switch</label>
+                
+            </div>
+            </br>
+            <div class="form-group">
+                <label asp-for="Throws" class="control-label">Throws:  </label>
+
+                  <input type="radio" id="Right" name="Throws" value="Right">
+                  <label for="Right">Right</label>
+                  <input type="radio" id="Left" name="Throws" value="Left">
+                  <label for="Left">Left</label>
+                  <input type="radio" id="Switch" name="Throws" value="Switch">
+                  <label for="Switch">Switch</label>
+
+            </div>
+            </br>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
