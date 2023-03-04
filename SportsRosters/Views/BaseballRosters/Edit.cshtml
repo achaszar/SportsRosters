@@ -26,41 +26,42 @@
             <div class="form-group">
                 <label asp-for="Number" class="control-label"></label>
                 <input asp-for="Number" class="form-control" min="00" max="99"/>
-                <span asp-validation-for="Number" class="text-danger"></span>
+                <span asp-validation-for="Number" class="text-danger"></span> 
             </div>
+            </br>
             <div class="form-group">
                 <label asp-for="Position" class="control-label">Position: </label>
-                <select name="Position" id="Position">
+                <select name="Position" id="Position" asp-for="Position">
                     <option value="Pitcher">Pitcher</option>
                     <option value="Catcher">Catcher</option>
                     <option value="Infielder">Infielder</option>
                     <option value="Outfield">Outfielder</option>
                     <option value="Utility">Utility</option>
                 </select>
+                <span asp-validation-for="Position" class="text-danger"></span>
             </div>
             </br>
             <div class="form-group">
                 <label asp-for="Bats" class="control-label">Bats:  </label>
-
-                <input type="radio" id="Right" name="Bats" value="Right">
+                <input type="radio" id="Right" name="Bats" value="Right" asp-for="Bats">
                 <label for="Right">Right</label>
-                <input type="radio" id="Left" name="Bats" value="Left">
+                <input type="radio" id="Left" name="Bats" value="Left" asp-for="Bats">
                 <label for="Left">Left</label>
-                <input type="radio" id="Switch" name="Bats" value="Switch">
+                <input type="radio" id="Switch" name="Bats" value="Switch" asp-for="Bats">
                 <label for="Switch">Switch</label>
-
+                <span asp-validation-for="Bats" class="text-danger"></span>
             </div>
             </br>
             <div class="form-group">
                 <label asp-for="Throws" class="control-label">Throws:  </label>
 
-                <input type="radio" id="Right" name="Throws" value="Right">
+                <input type="radio" id="Right" name="Throws" value="Right" asp-for="Bats">
                 <label for="Right">Right</label>
-                <input type="radio" id="Left" name="Throws" value="Left">
+                <input type="radio" id="Left" name="Throws" value="Left" asp-for="Bats">
                 <label for="Left">Left</label>
-                <input type="radio" id="Switch" name="Throws" value="Switch">
+                <input type="radio" id="Switch" name="Throws" value="Switch" asp-for="Bats">
                 <label for="Switch">Switch</label>
-
+                <span asp-validation-for="Throws" class="text-danger"></span>
             </div>
             </br>
             <div class="form-group">
